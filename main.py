@@ -3,7 +3,7 @@ from rag import process_urls, generate_answer
 
 st.set_page_config(page_title="Real Estate RAG", layout="wide")
 
-st.title("🏠 Real Estate Research Assistant")
+st.title("WebQuery AI")
 
 # ---------- SESSION STATE FLAGS ----------
 if "data_ready" not in st.session_state:
