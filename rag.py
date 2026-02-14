@@ -92,9 +92,9 @@ def generate_answer(query):
         raise RuntimeError("No vector store initialized")
 
     if "summary" in query.lower() or "summarize" in query.lower():
-        retriever = vector_store.as_retriever(search_kwargs={"k": 15})
+        retriever = vector_store.as_retriever(search_kwargs={"k": 25})
     else:
-        retriever = vector_store.as_retriever(search_kwargs={"k": 6})
+        retriever = vector_store.as_retriever(search_kwargs={"k": 10})
 
     chain = RetrievalQAWithSourcesChain.from_llm(
         llm=llm,
