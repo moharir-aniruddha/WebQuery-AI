@@ -8,17 +8,21 @@ WebQuery AI is a Retrieval-Augmented Generation (RAG) based web application that
 
 ![WebQuery AI UI](assets/UI.png)
 
+### 📄 PDF Upload & Query Interface
+![PDF Feature UI](assets/pdf-ui.png)
+
 ---
 
 ## 🚀 Features
 
 - Accepts static webpage URLs  
-- Extracts and processes webpage content  
+- Upload and process PDF documents  
+- Extracts and processes content from multiple sources  
 - Splits text into chunks for better retrieval  
 - Stores embeddings using Chroma vector database  
 - Generates context-aware answers using LLM  
 - Interactive Streamlit UI  
-- Progress status display during parsing  
+- Progress status display during parsing   
 
 ---
 
@@ -31,10 +35,13 @@ WebQuery AI is a Retrieval-Augmented Generation (RAG) based web application that
 - **Sentence Transformers** – Embeddings  
 - **Groq / LLM API** – Answer generation  
 - **Unstructured Loader** – Webpage parsing  
+- **PyPDF Loader** – PDF document processing  
 
 ---
 
 ## 🧠 How It Works
+
+### 🔹 Webpage Flow
 
 1. User enters one or more static webpage URLs.  
 2. The system loads and extracts text from the URLs.  
@@ -44,6 +51,15 @@ WebQuery AI is a Retrieval-Augmented Generation (RAG) based web application that
 6. When a question is asked:
    - Relevant chunks are retrieved.
    - The LLM generates an answer using retrieved context.
+
+### 🔹 PDF Flow
+
+1. User uploads one or more PDF documents.  
+2. The system extracts text from PDFs.  
+3. Text is split into chunks.  
+4. Embeddings are created and stored in ChromaDB.  
+5. User asks questions based on uploaded documents.  
+6. The system retrieves relevant sections and generates answers.
 
 ---
 
@@ -126,11 +142,19 @@ streamlit run main.py
 
 ## 📌 Usage
 
+### 🌍 Using Webpage URLs
+
 1. Open the sidebar.  
 2. Enter one or more static webpage URLs.  
 3. Click **Parse URLs**.  
 4. Wait until parsing completes.  
-5. Ask questions related to the webpage content.  
+5. Ask questions related to webpage content.  
+
+### 📄 Using PDF Documents
+
+1. Upload one or more PDF files.  
+2. Wait until document processing completes.  
+3. Ask questions based on PDF content. 
 
 ---
 
@@ -138,18 +162,18 @@ streamlit run main.py
 
 - Works best with static webpages (e.g., news articles).  
 - Dynamic websites may not load properly.  
-- Large documents may increase processing time.  
-- Performance depends on system resources.  
+- Large PDFs may increase processing time.  
+- Performance depends on system resources. 
 
 ---
 
 ## 🔮 Future Improvements
 
-- PDF Upload Support  
+- React Frontend UI  
 - Async Web Loader  
 - Caching for Faster Reloads  
 - Improved Retrieval Strategy  
-- Deployment on Streamlit Cloud  
+- Deployment on Streamlit Cloud 
 
 ---
 
